@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">EggTimer</string>
+    <string name="selectDesiredEgg">Vælg ønsket æg</string>
+    <string name="start">Start</string>
 </resources>

@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
+    android:background="#F3F3CD"
     android:padding="30dp">
 
     <TextView
@@ -14,8 +15,9 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toBottomOf=""
-        android:text="Vælg ønsket æg"
+        app:layout_constraintBottom_toTopOf="@id/buttonRow"
+        android:text="@string/selectDesiredEgg"
+        android:textColor="@android:color/black"
         android:textSize="35sp" />
 
     <LinearLayout
@@ -25,27 +27,41 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/actionTxt"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toTopOf=""
         android:weightSum="3"
         android:paddingTop="20dp">
 
-        <Button
+        <ImageButton
+            android:id="@+id/softBoiledBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Blødkogt"/>
+            android:src="@drawable/ic_soft"
+            android:scaleType="fitCenter"
+            android:background="@android:color/transparent"
+            android:onClick="onButtonEggSelectedClicked"
+            android:layout_marginHorizontal="5dp"/>
 
-        <Button
+        <ImageButton
+            android:id="@+id/mediumBoiledBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Smilende"/>
+            android:src="@drawable/ic_medium"
+            android:scaleType="fitCenter"
+            android:background="@android:color/transparent"
+            android:onClick="onButtonEggSelectedClicked"
+            android:layout_marginHorizontal="5dp"/>
 
-        <Button
+        <ImageButton
+            android:id="@+id/hardBoiledBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Hårdkogt"/>
+            android:src="@drawable/ic_hard"
+            android:scaleType="fitCenter"
+            android:background="@android:color/transparent"
+            android:onClick="onButtonEggSelectedClicked"
+            android:layout_marginHorizontal="5dp"/>
     </LinearLayout>
 
     <TextView
@@ -55,16 +71,19 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/buttonRow"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:text="00:00"
-        android:textSize="80sp"/>
+        app:layout_constraintBottom_toTopOf="@id/startPauseBtn"
+        android:textColor="@android:color/black"
+        android:textSize="50sp"
+        android:text="00:00"/>
 
     <Button
-        android:layout_width="match_parent"
+        android:id="@+id/startPauseBtn"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_weight="1"
-        android:text="Start"/>
+        android:background="@drawable/roundbutton"
+        android:text="@string/start"
+        android:enabled="false"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
